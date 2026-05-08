@@ -10,8 +10,8 @@ type Score={
     {
         return(
             
-            <p className="absolute top-15 w-100 h-10 text-4xl text-white border-gray-400">
-                Reseteds
+            <p className="text-2x1 sm:text-2xl md:text-3xl text-white border-gray-400 animate-fade-in">
+                Reseted
             </p>
         )
     }
@@ -35,21 +35,24 @@ export default function Header({score,setScore}:Score){
     const [ruleFlag,setRuleFlag]=useState<boolean>(false)
     return (
     <>
-    <div className="flex justify-between gap-1 ml-5 mr-5 pt-4">
+    <div className="flex justify-between items-center gap-1 ml-5 mr-5 pt-4 h-17">
         <Link to ="/">
-        <div className="font-bold text-white text-2xl italic max-sm:text-[19px]">
+        <div className="font-bold text-white text-[20px] sm:text-2xl md:text-3xl italic ">
             Guess the Number Game:
         </div>
         </Link>
         
-        <div className="flex gap-5" >
-            <button className=" text-sm md:text-2xl md:h-9 max-sm:w-30 font-bold h-7 text-white bg-blue-400 px-5 rounded-md cursor-pointer flex justify-center align-middle transition-all hover:bg-blue-500 hover:scale-105 active:bg-blue-300" onClick={resetScore}>
+        <div className="flex items-center gap-5" >
+
+            <div className="flex flex-col justify-center items-center">
+            <button className=" text-sm md:text-2xl md:h-9  font-bold h-7 px-5 text-white bg-blue-400 pt-0.5 rounded-md cursor-pointer flex justify-center align-middle transition-all hover:bg-blue-500 hover:scale-105 active:bg-blue-300" onClick={resetScore}>
             Reset Score
         </button>
         {displayScore && <DisplayResetScore/>}
+        </div>
            
             <button className="text-sm md:text-2xl md:h-9 font-bold
-            h-7 text-white bg-blue-400 px-3 rounded-md cursor-pointer flex justify-center align-middle transition-all hover:bg-blue-500 hover:scale-105 active:bg-blue-300 " onClick={()=>{
+            h-7 text-white bg-blue-400 px-3 pt-0.5 rounded-md cursor-pointer flex justify-center align-middle transition-all hover:bg-blue-500 hover:scale-105 active:bg-blue-300 " onClick={()=>{
                 setRuleFlag(!ruleFlag)
             }} >
                 Rules

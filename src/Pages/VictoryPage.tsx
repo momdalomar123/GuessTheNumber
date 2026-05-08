@@ -17,7 +17,10 @@ return(
     <div className="flex flex-col gap-6 h-screen justify-center items-center" tabIndex={0} autoFocus onKeyDown={(e)=>{
         if(e.key==="Enter") navigateHome("/")
     }}>
-        <h1 className="text-4xl text-white">Congratulations! You guessed the number!</h1>
+        
+        <h1 className=" flex justify-center w-60 text-2xl sm:text-3xl
+        sm:w-100 md:text-4xl md:w-170 text-white">Congratulations! You guessed the number!</h1>
+      
         <Link to="/">
         <h2 className="text-3x1 text-white">
             Your score is: {location.state?.score +10}

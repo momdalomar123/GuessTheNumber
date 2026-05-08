@@ -16,13 +16,13 @@ return(
     <div className="flex flex-col gap-6 h-screen justify-center items-center" tabIndex={0} autoFocus onKeyDown={(e)=>{
         if(e.key==="Enter") navigateHome("/")
     }}>
-        <h1 className="text-4xl text-white">Sorry You ran out of attempts!</h1>
-        <h2  className="text-3xl text-white">The number was {location.state?.computerNumber} </h2>
+        <h1 className="md:text-4xl sm:text-3xl text-2xl  text-white flex ">Sorry You ran out of attempts!</h1>
+        <h2  className="md:text-4xl sm:text-3xl  text-2xl text-white">The number was {location.state?.computerNumber} </h2>
         <Link to="/">
-          <h3 className="text-3x1 text-white">
-            Your score is: {location.state?.score}
-        </h3>
-            <button className="bg-fuchsia-200 text-white font-bold text-2xl px-4 pt-1 pb-1 rounded-md cursor-pointer transition-colors hover:bg-fuchsia-400">
+          <p className="flex justify-center items-center text-2x1 text-white ">
+            Your score is: {location.state?.score} 
+        </p>
+            <button className="bg-fuchsia-300 text-white font-bold text-2xl px-5 pt-1 pb-1 rounded-md cursor-pointer transition-colors hover:bg-fuchsia-400 active:bg-fuchsia-500">
                 Play Again
             </button>
         </Link>
