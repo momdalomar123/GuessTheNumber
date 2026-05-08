@@ -10,7 +10,7 @@ type Score={
     {
         return(
             
-            <p className="absolute top-15 w-100 h-10 text-4xl text-white border-gray-400">
+            <p className="absolute top-15 text-2xl text-white ">
                 Reseted
             </p>
         )
