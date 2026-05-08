@@ -9,7 +9,7 @@ export default function DisplayRules({animationType,display}:AnimationAndDisplay
 {
     return(
         
-        <div className={`absolute right-5 lg:bottom-25 max-sm:bottom-28 w-60 mt-2 bg-zinc-500 rounded-md px-2.5 z-10 ${animationType} ${display}`}>
+        <div className={`absolute right-5 min-lg:bottom-25 max-sm:bottom-28 w-60 mt-2 bg-zinc-500 rounded-md px-2.5 z-10 ${animationType} ${display}`}>
            
             <p className="font-bold text-white px-1 pb-1">
                 <span className="text-2xl">The Rules are Simple:
