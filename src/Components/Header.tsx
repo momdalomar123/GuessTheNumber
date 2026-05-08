@@ -37,7 +37,7 @@ export default function Header({score,setScore}:Score){
     <>
     <div className="flex justify-between gap-1 ml-5 mr-5 pt-4">
         <Link to ="/">
-        <div className="font-bold text-white text-2xl italic">
+        <div className="font-bold text-white text-2xl italic max-sm:text-[19px]">
             Guess the Number Game:
         </div>
         </Link>
