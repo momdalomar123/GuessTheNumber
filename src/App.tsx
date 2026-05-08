@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import "./App.css"
 import MainMenu from "./Components/MainMenu"
+import PlayerOneRules from "./Pages/PlayerOneRules"
 import DifficultySelector from "./Pages/DifficultySelector"
 import PlayingComputer from "./Pages/PlayingComputer"
 import VictoryPage from "./Pages/VictoryPage"
 import LosePage from "./Pages/LosePage"
+
 import {Routes,Route} from "react-router-dom"
 function getRandomNumber(range:number)
 {
@@ -26,19 +28,24 @@ export default function App(){
       <Route index element ={ <MainMenu
       score={score}
       setScore={setScore}
-      />}></Route>
+      />}/>
+      <Route path="Rules" element={<PlayerOneRules/>}/>
       <Route path="Difficulties" element= {<DifficultySelector
       score={score}
       setScore={setScore}
-       />}></Route>
+       />}/>
       <Route path="PlayingComputer" element= {<PlayingComputer 
       computerNumber={computerNumber}
       setComputerNumber={setComputerNumber}
       score={score}
       setScore={setScore}
-      />}></Route>
-      <Route path="VictoryPage" element= {<VictoryPage/>}></Route>
-      <Route path="LosePage" element= {<LosePage/>}></Route>
+      />}/>
+      <Route path="VictoryPage" element= {<VictoryPage
+       score={score}
+       setScore={setScore}/>}/>
+      <Route path="LosePage" element= {<LosePage
+      score={score}
+       setScore={setScore}/>}/>
       
     </Routes>
     

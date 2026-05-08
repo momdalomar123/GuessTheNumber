@@ -10,10 +10,12 @@ export default function GameModes(){
                 backgroundColor="bg-zinc-500"
                 />
                 </Link>
+                <Link to="/Rules">
                  <GameModesButtons
                   text="Player Vs Player"
                   backgroundColor="bg-zinc-500"
                   />
+                  </Link>
             </div>
         </>
        ) 
