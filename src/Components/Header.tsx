@@ -10,7 +10,11 @@ type Score={
     {
         return(
             
+<<<<<<< HEAD
             <p className="text-2x1 sm:text-2xl md:text-3xl text-white border-gray-400 animate-fade-in">
+=======
+            <p className="absolute top-15 text-2xl text-white ">
+>>>>>>> 4a3ad70f559726f1046080b8b80ebb9ff9134ab1
                 Reseted
             </p>
         )
