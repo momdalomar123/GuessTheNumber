@@ -17,11 +17,9 @@ return(
         if(e.key==="Enter") navigateHome("/")
     }}>
         <h1 className="md:text-4xl sm:text-3xl text-2xl  text-white flex ">Sorry You ran out of attempts!</h1>
-        <h2  className="md:text-4xl sm:text-3xl  text-2xl text-white">The number was {location.state?.computerNumber} </h2>
+        <h2  className="md:text-4xl sm:text-3xl  text-2xl text-white">The number was {location.state?.computerNumber || location.state?.playerNumber} </h2>
         <Link to="/">
-          <p className="flex justify-center items-center text-2x1 text-white ">
-            Your score is: {location.state?.score} 
-        </p>
+       
             <button className="bg-fuchsia-300 text-white font-bold text-2xl px-5 pt-1 pb-1 rounded-md cursor-pointer transition-colors hover:bg-fuchsia-400 active:bg-fuchsia-500">
                 Play Again
             </button>

@@ -59,9 +59,12 @@ export default function Header({score,setScore}:Score){
             </button>
             {ruleFlag===true? <DisplayRules 
             animationType={animationType.fadeIn}
-            display=""/>:<DisplayRules 
-            animationType={animationType.fadeOut} 
-            display={"hidden"}/>}
+            display=""
+            />:<DisplayRules 
+            animationType={animationType.fadeIn}
+            display="hidden"
+            />
+            }
         </div>
         
     </div>

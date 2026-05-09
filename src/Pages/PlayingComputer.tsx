@@ -22,7 +22,7 @@ function saveToLocalStorage(score:number)
     localStorage.setItem("score",JSON.stringify(score))
 }
 
-export default function PlayingComputer({computerNumber,setComputerNumber,score,setScore}:RandomComputerNumberAndScore)
+export default function Playing({computerNumber,setComputerNumber,score,setScore}:RandomComputerNumberAndScore)
 {
     const location = useLocation()
     const [hint,setHint]=useState<string>("")
@@ -40,26 +40,31 @@ export default function PlayingComputer({computerNumber,setComputerNumber,score,
         saveToLocalStorage(score)
         navigate("/LosePage",{state:{computerNumber,score}})
     }
-
-    if(e.key==="Enter" && Number(e.currentTarget.value)===computerNumber){
+    else if(e.key==="Enter" && e.currentTarget.value===""){
+        setHint("Please Enter a Number")
+    }
+    else if(e.key==="Enter" && Number(e.currentTarget.value)===computerNumber){
        setScore(score+10)
         saveToLocalStorage(score)
        navigate("/VictoryPage",{state:{score}})
     }
    
     else if (e.key==="Enter" && Number(e.currentTarget.value) > computerNumber){
+        console.log(e.currentTarget.value)
         setAttempts(attempts-1)
         setHint("Hint: Lower Number")
         e.currentTarget.value=""
     }
       else if (e.key==="Enter" && Number(e.currentTarget.value) < computerNumber){
+        console.log(e.currentTarget.value)
         setAttempts(attempts-1)
         setHint("Hint: Higher Number")
         e.currentTarget.value=""
     }
     
+    
 }
-console.log(hint)
+
     return(
         <>
         <Header 

@@ -8,6 +8,7 @@ import VictoryPage from "./Pages/VictoryPage"
 import LosePage from "./Pages/LosePage"
 
 import {Routes,Route} from "react-router-dom"
+import PlayingPlayer from "./Pages/PlayingPlayer"
 function getRandomNumber(range:number)
 {
   return Math.floor(Math.random()*range+1)
@@ -29,12 +30,22 @@ export default function App(){
       score={score}
       setScore={setScore}
       />}/>
-      <Route path="Rules" element={<PlayerOneRules/>}/>
+      <Route path="Rules" element={
+        <PlayerOneRules
+        score={score}
+        setScore={setScore}
+        />}/>
+        <Route path="PlayingPlayer" element=
+        {<PlayingPlayer 
+          score={score}
+          setScore={setScore}
+        />}
+        />
       <Route path="Difficulties" element= {<DifficultySelector
       score={score}
       setScore={setScore}
        />}/>
-      <Route path="PlayingComputer" element= {<PlayingComputer 
+      <Route path="PlayingComputer" element= {<PlayingComputer
       computerNumber={computerNumber}
       setComputerNumber={setComputerNumber}
       score={score}
