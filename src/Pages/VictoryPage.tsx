@@ -7,7 +7,7 @@ type Score={
 export default function VictoryPage({score,setScore}:Score){
       const navigateHome = useNavigate()
       const location= useLocation()
-    
+   
 return(
     <>
     <Header 
@@ -23,7 +23,7 @@ return(
       
         <Link to="/">
         <h2 className="text-3x1 text-white">
-            {location.state?.score && `Your score is: ${location.state?.score +10}`}
+            {(location.state?.score+10) && `Your score is: ${location.state?.score +10} ` || ""}
         </h2>
             <button className="bg-fuchsia-200 text-white font-bold text-2xl px-4 pt-1 pb-1 rounded-md cursor-pointer transition-colors hover:bg-fuchsia-400">
                 Play Again
