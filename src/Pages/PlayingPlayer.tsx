@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Header from "../Components/Header";
 import UserImage from "../assets/Images/user.png";
 interface Score {
@@ -16,6 +16,9 @@ export default function PlayingPlayer({ score, setScore }: HeaderRules) {
   const [hint, setHint] = useState<string>("");
   const [attempts, setAttempts] = useState<number>(location.state.attempts);
 
+  useEffect(()=>{
+    if(!attempts)  navigate("/LosePage", { state: { playerNumber } });
+  },[attempts,navigate,playerNumber])
   function checkNumber(
     e: React.KeyboardEvent<HTMLInputElement>,
     playerNumber: number,
@@ -26,9 +29,8 @@ export default function PlayingPlayer({ score, setScore }: HeaderRules) {
     );
     if (e.key === "Enter" && e.currentTarget.value === "") {
       setHint("Please Enter a Number");
-    } else if (attempts === 0) {
-      navigate("/LosePage", { state: { playerNumber } });
-    } else if (
+    }
+     else if (
       e.key === "Enter" &&
       Number(e.currentTarget.value) === playerNumber
     ) {
@@ -54,7 +56,7 @@ export default function PlayingPlayer({ score, setScore }: HeaderRules) {
     <>
       <Header score={score} setScore={setScore} />
       <div className="flex flex-col h-screen justify-center items-center gap-2">
-        <div className="text-4xl text-white italic absolute top-40 max-sm:text-3xl">
+        <div className="text-4xl text-white italic absolute top-40 max-[480px]:text-3xl max-[400px]:text-2xl max-[330px]:text-[18px]">
           Guess Player One's Number
         </div>
         <div className="flex gap-2">
@@ -68,8 +70,9 @@ export default function PlayingPlayer({ score, setScore }: HeaderRules) {
 
         <div className="text-2xl text-white">{hint}</div>
         <input
-          className="bg-zinc-600 px-4 pt-1 pb-1 rounded-md outline-0 text-2xl text-white"
+          className="bg-zinc-600 px-4 pt-1 pb-1 rounded-md outline-0 text-2xl text-white w-70 max-[290px]:w-60"
           placeholder="Enter your guess"
+             autoFocus
           onKeyDown={(e) => {
             checkNumber(e, playerNumber);
           }}

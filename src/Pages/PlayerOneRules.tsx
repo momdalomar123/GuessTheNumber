@@ -53,6 +53,7 @@ export default function PlayerOneRules({ score, setScore }: Score) {
             ref={numberInput}
             className="bg-zinc-600 px-4 pt-1 pb-1 rounded-md outline-0 text-2xl text-white"
             placeholder="Enter The Number"
+            autoFocus
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setNumber(e.currentTarget.value);
             }}

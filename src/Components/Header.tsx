@@ -12,15 +12,16 @@ function SideBar() {
   return (
     <div
       className="h-screen w-100 max-sm:w-50 max-md:w-70
-    z-10 bg-gray-800 absolute right-0 bottom-0 flex flex-col items-center justify-center animate-slide-in "
+    z-10 bg-white/10 absolute right-0 bottom-0 flex flex-col items-center justify-center animate-slide-in backdrop-blur-2xl backdrop:backdrop-blur-2xl "
     >
-      <div className="flex flex-col gap-5 w-full">
+      <div className="flex flex-col gap-5 w-full p-5 ">
         <div className="w-full">
           <a href="https://github.com/momdalomar123" target="_blank">
             <button
-              className="w-full text-sm md:text-2xl  bg-gray-900  font-bold h-15 text-white  
-              rounded-md cursor-pointer flex justify-center items-center
-            transition-all  hover:scale-105 active:bg-blue-300 gap-1.5"
+              className="w-full text-sm md:text-2xl  bg-gray-900  font-bold h-15 text-white  rounded-lg  
+               cursor-pointer flex justify-center items-center
+            transition-all  hover:scale-105
+            hover:bg-gray-600 hover:text-gray-900  active:bg-blue-300 gap-1.5"
             >
               <img src={GithubLogo} className="w-10 h-10"></img>
               My Github
@@ -33,9 +34,8 @@ function SideBar() {
             target="_blank"
           >
             <button
-              className="w-full text-sm md:text-2xl  bg-blue-400  font-bold h-15 text-white  
-              rounded-md cursor-pointer flex justify-center items-center
-            transition-all  hover:scale-105 active:bg-blue-300 gap-1.5"
+              className="w-full text-sm md:text-2xl  bg-blue-400  font-bold h-15 text-white rounded-lg cursor-pointer flex justify-center items-center
+            transition-all  hover:scale-105 hover:bg-blue-200 hover:text-blue-400 active:bg-blue-300 gap-1.5"
             >
               Password Generator
             </button>
@@ -44,9 +44,10 @@ function SideBar() {
         <div className="w-full">
           <a href="https://momdalomar123.github.io/QuickNotes/" target="_blank">
             <button
-              className="w-full text-sm md:text-2xl  bg-red-400  font-bold h-15 text-white  
-              rounded-md cursor-pointer flex justify-center items-center
-            transition-all  hover:scale-105 active:bg-blue-300 gap-1.5"
+              className="w-full text-sm md:text-2xl  bg-red-400  font-bold h-15 text-white rounded-lg  
+              cursor-pointer flex justify-center items-center
+            transition-all  hover:scale-105
+            hover:bg-red-300 hover:text-red-400 active:bg-blue-300 gap-1.5"
             >
               Quick Notes
             </button>
@@ -88,17 +89,17 @@ export default function Header({ score, setScore }: Score) {
   }
   return (
     <>
-      <div className="flex justify-between items-center gap-1 ml-5 mr-5 pt-4 h-17">
+      <div className="flex justify-between items-center gap-1  p-5 h-17 ">
         <Link to="/">
-          <div className="font-bold text-white text-[20px] sm:text-2xl md:text-3xl italic ">
+          <div className="font-bold text-4xl text-white max-[830px]:text-3xl  max-[640px]:text-2xl max-[572px]:text-[20px] italic ">
             Guess the Number Game:
           </div>
         </Link>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-2 ">
           <div className="flex flex-col justify-center items-center">
             <button
-              className="max-md:w-29 text-sm md:text-2xl md:h-9  font-bold h-7 px-5 text-white bg-blue-400 pt-0.5 rounded-md cursor-pointer flex justify-center align-middle transition-all hover:bg-blue-500 hover:scale-105 active:bg-blue-300"
+              className=" h-9 max-[570px]:w-25  max-[570px]:text-[15px] max-[400px]:w-19 max-[400px]:text-[11px]  font-bold  p-2 text-white bg-blue-400  rounded-md cursor-pointer flex justify-center items-center transition-all hover:bg-blue-500 hover:scale-105 active:bg-blue-300"
               onClick={resetScore}
             >
               Reset Score
@@ -107,8 +108,8 @@ export default function Header({ score, setScore }: Score) {
           </div>
 
           <button
-            className="text-sm md:text-2xl md:h-9 font-bold
-            h-7 text-white bg-blue-400 px-3 pt-0.5 rounded-md cursor-pointer flex justify-center align-middle transition-all hover:bg-blue-500 hover:scale-105 active:bg-blue-300 "
+            className=" h-9 w-20  font-bold
+             text-white bg-blue-400  p-2  rounded-md cursor-pointer flex justify-center items-center transition-all hover:bg-blue-500 hover:scale-105 active:bg-blue-300 max-[590px]:w-15 max-[400px]:w-19 max-[400px]:text-[13px]  "
             onClick={() => {
               setRuleFlag(!ruleFlag);
             }}
@@ -123,11 +124,11 @@ export default function Header({ score, setScore }: Score) {
               display="hidden"
             />
           )}
-          <button className="cursor-pointer z-20 max-sm:w-10 md:h-15 flex justify-center items-center">
+          <button className=" cursor-pointer z-20 max-sm:w-10 md:h-15 flex justify-center items-center ">
             <img
               src={HamburgerLogo}
               alt=""
-              className="w-10 h-5 px-2 max-sm:w-10 md:h-10 md:w-15 "
+              className={`w-11 h-fit px-2   ${sidebarFlag ? "animate-rotate-up" : "animate-rotate-down"}`}
               onClick={showHideSidebar}
             />
           </button>

@@ -14,7 +14,7 @@ export default function DisplayRules({
     >
       <p className="font-bold text-white px-1 pb-1">
         <span className="text-2xl">The Rules are Simple:</span>
-        <span className="block">---------------------------</span>
+        <span className="block border-t-2 border-dashed mt-2 mb-2 w-full "></span>
         <div className="flex gap-12">
           <img src={UserImage} className="w-5 flex" />
           <img src={ComputerImage} className="w-5 flex" />
@@ -25,7 +25,7 @@ export default function DisplayRules({
         guess the random number chosen while having limited attempts.
       </p>
       <p className="font-bold text-white px-1 pb-1">
-        ---------------------------
+        <span className="block border-t-2 border-dashed mt-2 mb-2 w-full "></span>
         <div className="flex gap-12">
           <img src={UserImage} className="w-5 flex" />
           <img src={UserImage} className="w-5 flex" />

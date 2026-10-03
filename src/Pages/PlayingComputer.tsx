@@ -33,6 +33,9 @@ export default function Playing({
   }, [setComputerNumber, location.state.range]);
   const navigate = useNavigate();
   const [attempts, setAttempts] = useState<number>(location.state.attempts);
+  useEffect(() => {
+    if (!attempts) navigate("/LosePage", { state: { computerNumber } });
+  }, [attempts, navigate, computerNumber]);
 
   function checkNumber(
     e: React.KeyboardEvent<HTMLInputElement>,
@@ -73,8 +76,8 @@ export default function Playing({
     <>
       <Header score={score} setScore={setScore} />
 
-      <div className="flex flex-col h-screen justify-center items-center gap-2">
-        <div className="text-4xl text-white italic absolute top-40 max-sm:text-3xl">
+      <div className="flex flex-col h-screen justify-center items-center gap-2  ">
+        <div className="text-4xl text-white italic absolute top-40 max-[480px]:text-3xl max-[400px]:text-2xl max-[330px]:text-[18px]">
           Guess the Computer's Number
         </div>
         <div className="flex gap-2">
@@ -88,8 +91,9 @@ export default function Playing({
 
         <div className="text-2xl text-white">{hint}</div>
         <input
-          className="bg-zinc-600 px-4 pt-1 pb-1 rounded-md outline-0 text-2xl text-white"
-          placeholder="Enter your guess"
+          className="bg-zinc-600 px-4 pt-1 pb-1 rounded-md outline-0 text-2xl text-white w-70 max-[290px]:w-60  "
+          placeholder="Enter Your Guess"
+          autoFocus
           onKeyDown={(e) => {
             checkNumber(e, computerNumber);
           }}

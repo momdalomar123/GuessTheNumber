@@ -39,6 +39,27 @@
       transform: translateX(0);
     }
   }
+
+  --animate-rotate-up: RotateUp 0.3s ease-out 0s 1 forwards;
+
+  @keyframes RotateUp {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+  --animate-rotate-down: RotateDown 0.3s ease-out 0s 1 forwards;
+
+  @keyframes RotateDown {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
   --font-roboto: "Roboto", sans-serif;
   --font-cause: "Cause", sans-serif;
 }
